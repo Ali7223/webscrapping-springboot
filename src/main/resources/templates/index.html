@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Scraper Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1>📚 Book Scraper Dashboard</h1>
+	<p>
+	    Data scraped from:
+	    <a href="https://books.toscrape.com" target="_blank" class="source-link">
+	        https://books.toscrape.com
+	    </a>
+	</p>
+
+	<p th:text="${message}" style="color:green; font-weight:bold;"></p>
+
+    <form th:action="@{/books/scrape}" method="post">
+        <button type="submit" class="btn">Scrape Now</button>
+    </form>
+
+    <br/>
+    <a href="/books/view" class="link">View Scraped Books →</a>
+</div>
+</body>
+</html>
